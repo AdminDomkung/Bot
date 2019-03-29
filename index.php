@@ -1,6 +1,5 @@
 <?php
-require "vendor/autoload.php";
-require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
+
 $access_token = 'HBNoIoQBeQHyRxCeCGRjYDad526mABEto9JFoh8C8cnyzLzBzduVEEYicXKgXNQIEuyyk6Z15W6jTtZ7VunhobqK0zrKg97CgKuFqtehfedFGPek35rU7VDa4/2gMe8t/zbH51Z5speNkzGGbyfkEQdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
