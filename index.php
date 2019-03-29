@@ -1,6 +1,6 @@
 <?php
 echo "Hello BOT";
-    $accessToken = "";
+    $accessToken = "ruBya8wkGoLKeOUasBVEQ7GOZVzx52HFif9ruTGGryy7ffqjKa0WetE2WE0KMXBREuyyk6Z15W6jTtZ7VunhobqK0zrKg97CgKuFqtehfedzaBp15TmvjrFV4pdn+DpzJGE+nzM7wiGk8UGTKb5DvwdB04t89/1O/w1cDnyilFU=";
     
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
