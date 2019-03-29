@@ -1,4 +1,5 @@
 <?php
+echo "Hello BOT";
     $accessToken = "";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     
     $content = file_get_contents('php://input');
