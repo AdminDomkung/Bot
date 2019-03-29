@@ -1,6 +1,6 @@
 <?php
 echo "Hello BOT";
-    $accessToken = "";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    $accessToken = "";
     
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
@@ -9,16 +9,16 @@ echo "Hello BOT";
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
-    //รับข้อความจากผู้ใช้
+    
     $message = $arrayJson['events'][0]['message']['text'];
-#ตัวอย่าง Message Type "Text"
+
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    #ตัวอย่าง Message Type "Sticker"
+
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "sticker";
@@ -26,7 +26,7 @@ echo "Hello BOT";
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    #ตัวอย่าง Message Type "Image"
+   
     else if($message == "รูปน้องแมว"){
         $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -35,7 +35,7 @@ echo "Hello BOT";
         $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
         replyMsg($arrayHeader,$arrayPostData);
     }
-    #ตัวอย่าง Message Type "Location"
+    
     else if($message == "พิกัดสยามพารากอน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "location";
@@ -45,7 +45,6 @@ echo "Hello BOT";
         $arrayPostData['messages'][0]['longitude'] = "100.532752";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    #ตัวอย่าง Message Type "Text + Sticker ใน 1 ครั้ง"
     else if($message == "ลาก่อน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
